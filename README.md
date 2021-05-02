@@ -48,7 +48,9 @@ Simple, just type: `ssh pi@<the raspberry pi ip>`
 
 After you are succesfully connect to your raspberry pi we are going to make sure to everything is up-to-date!
 
-For that we are just going to use the following command: `sudo apt-get update && sudo apt-get upgrade`
+For that we are just going to use the following command: 
+`sudo apt-get update && sudo apt-get upgrade`
+
 `sudo apt-get update` will update the local repo to know if there is update.
 `sudo apt-get upgrade` will make the update happend (if there is some update)
 
@@ -56,6 +58,7 @@ If you have Os update just simply execute `sudo apt-get dist-upgrade`
 
 We also going to install `ufw` as our firewall for a little bit of protection
 `sudo apt-get install ufw`
+
 And enable it with this command `sudo ufw enable`
 
 --------------------------------------
@@ -97,6 +100,7 @@ You will just need to replace with your domain the `<certbot>` part.
 Now we are going to add the support of Dns-over-Https to our nginx config.
 Simply intall dnss (Dns-over-https)`sudo apt-get install dnss`
 And start and enable the dnss and nginx services. No futher config is needed!
+
 `sudo systemctl start nginx.service dnss.service`
 `sudo systemctl enable nginx.servce dnss.service`
 
@@ -123,12 +127,14 @@ First install it:
 
 Now you can copy and past the `unbound.conf` of this repo.
 It curently use Cloudflare as it upstream but i've recommend the followings dns for maxmuim privacy.
+
 `https://github.com/Gontier-Julien/Recommended-Dns-services-for-privacy`
 
 Additionally you can add this to your `/etc/hosts` so you can know on the Pi-hole interface that the queries come from Undound.
 `127.0.0.2	unbound`
 
 And now you can start and enable Undound!
+
 `sudo systemctl start unbound.service`
 `sudo systemctl enable unbound.service`
 
