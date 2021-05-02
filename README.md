@@ -87,11 +87,10 @@ For this we are going to use the One-Step Automated Install
 Now just before making more stuff, we are going to create a DynDns so we can have acces to our Pi-hole web interface and dns from outside.
 \
 \
-First install ddclient `sudo apt-get install ddclient`
-Now go create an account at a Dynamique dns service. 
-\
-\
->I've recommend [desec.io](https://desec.io/) since it a secure service that protect privacy and it free, and that the premade config is made on it
+First install ddclient `sudo apt-get install ddclient`\
+Now go create an account at a Dynamique dns service.
+
+>I've recommend [desec.io](https://desec.io/) since it a secure service that protect privacy and it free, and that what the premade config file is made on.
 
 Create your custom domain name and make a token `this will be important for our ddclient`\
 In your ddclient config file, copy and past the premade one and change the values of `<token>` and `<yourdomain>` accordingly.
@@ -150,7 +149,7 @@ First install it:\
 Now you can copy and past the [unbound.conf](/unbound.conf) of this repo.
 It curently use Cloudflare as it upstream. 
 
->But i've recommend the followings dns for maxmuim privacy.
+>But i've recommend the followings Dns for maxmuim privacy.
 >[My Recommended-Dns-services-for-privacy](https://github.com/Gontier-Julien/Recommended-Dns-services-for-privacy)
 
 Additionally you can add `127.0.0.2	unbound` to your `/etc/hosts` so you can know on the Pi-hole interface that the queries come from Undound.
