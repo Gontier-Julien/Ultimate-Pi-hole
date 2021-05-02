@@ -165,4 +165,4 @@ And now you can start and enable Undound!\
 
 - [ ] "Automated" install.
 
-- [ ] Use unbound for Dns-over-Https for Having only exteranl dns acces without the interface.
+- [ ] Use unbound for Dns-over-Https for Having only external dns access without the interface.
