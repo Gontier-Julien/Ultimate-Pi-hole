@@ -1,7 +1,7 @@
 # Ultimate-Pi-hole
 The Ultimate Pi-hole configuration with home DoH and DoT to acces anywhere!
 
-[This is not finised and still in the making]
+### [This is not finised and still in the making]
 
 --------------------------------------
 
@@ -15,8 +15,7 @@ We are going to install our Os without Gui (or a headless install):
 
 
 For your Raspberry pi:
-I recommend using the raspbery pi imager
-https://www.raspberrypi.org/software/
+I recommend using the [raspbery pi imager](https://www.raspberrypi.org/software/)
 
 Choose witch Os your using, grab a sd-card 8Go should be good, but i recommend having a 16Go one.
 
@@ -32,7 +31,7 @@ Now before we take our sd-card out we are going to add the `SSH` file in the boo
 # Initial connection
 
 After having powerd up your raspberry pi and have located it on your network we are going to connect to it via `ssh`.
-On Windows your can either use the `CMD` with the `OpenSSH` feature (witch i reccomend) or `putty`(https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+On Windows your can either use the `CMD` with the `OpenSSH` feature (witch i reccomend) or [putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 
 If your already on Linux it should already be built-in on your disto.
 
@@ -68,7 +67,7 @@ And enable it with this command `sudo ufw enable`
 Now we are finally going to install Pi-Hole!
 
 For this we are going to use the One-Step Automated Install
-`https://github.com/pi-hole/pi-hole/#one-step-automated-install`
+[Pi-hole One-Step Automated Install](https://github.com/pi-hole/pi-hole/#one-step-automated-install)
 
 --------------------------------------
 
@@ -78,7 +77,9 @@ Now just before making more stuff, we are going to create a DynDns so we can hav
 
 First install ddclient `sudo apt-get install ddclient`
 
-Now go create an account at a Dynamique dns service. `I've recommend https://desec.io/ since it a secure service that protect privacy and it free, and that the premade config is made on it`
+Now go create an account at a Dynamique dns service. 
+
+I've recommend [desec.io](https://desec.io/) since it a secure service that protect privacy and it free, and that the premade config is made on it
 
 Create your custom domain name and make a token `this will be important for our ddclient`
 In your ddclient config file, copy and past the premade one and change the values of `<token>` and `<yourdomain>` accordingly.
@@ -93,7 +94,7 @@ After this we are going to change lighttpd to nginx.
 We are also going to follow the Optiona configuration part so we can have acces to our Dns and our interface from the outside.
 
 But to do this we need to make a few changes in the configuration.
-I will provide in this repo a full premade config and a config that you to your `nginx.conf` file if you want it that way.
+I will provide in this repo a full premade config and a config that you to your [nginx.conf](/nginx.conf) file if you want it that way.
 
 You will just need to replace with your domain the `<certbot>` part.
 
@@ -115,7 +116,7 @@ Reload ufw `sudo ufw reload`
 
 Now we install stunnel:
 `sudo apt-get install stunnel`
-And for our config just past the `stunnel.conf` of this repo and replace with your domain the `<certbot>` part.
+And for our config just past the [stunnel.conf](/stunnel.conf) of this repo and replace with your domain the `<certbot>` part.
 
 --------------------------------------
 
@@ -125,10 +126,10 @@ Now for our backend we are going to use Unbound to have a secure way to our upst
 First install it:
 `sudo apt-get install unbound`
 
-Now you can copy and past the `unbound.conf` of this repo.
+Now you can copy and past the [unbound.conf](/unbound.conf) of this repo.
 It curently use Cloudflare as it upstream but i've recommend the followings dns for maxmuim privacy.
 
-`https://github.com/Gontier-Julien/Recommended-Dns-services-for-privacy`
+[My Recommended-Dns-services-for-privacy](https://github.com/Gontier-Julien/Recommended-Dns-services-for-privacy)
 
 Additionally you can add this to your `/etc/hosts` so you can know on the Pi-hole interface that the queries come from Undound.
 `127.0.0.2	unbound`
