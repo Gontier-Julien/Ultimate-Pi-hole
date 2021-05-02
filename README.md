@@ -5,6 +5,8 @@ The Ultimate Pi-hole configuration with home DoH and DoT to acces anywhere!
 
 --------------------------------------
 
+# Install the Os
+
 First we are going to download and install our Os.
 
 We are going to use Raspberry Pi OS (Raspbian) for our Os, but you can also use Ubuntu.
@@ -27,6 +29,8 @@ Now before we take our sd-card out we are going to add the `SSH` file in the boo
 
 --------------------------------------
 
+# Initial connection
+
 After having powerd up your raspberry pi and have located it on your network we are going to connect to it via `ssh`.
 On Windows your can either use the `CMD` with the `OpenSSH` feature (witch i reccomend) or `putty`(https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 
@@ -39,6 +43,8 @@ Simple, just type: `ssh pi@<the raspberry pi ip>`
 `I recommend changing your password for security, just type "passwd" to change it`
 
 --------------------------------------
+
+# Making sure everything is up-to-date
 
 After you are succesfully connect to your raspberry pi we are going to make sure to everything is up-to-date!
 
@@ -54,12 +60,16 @@ And enable it with this command `sudo ufw enable`
 
 --------------------------------------
 
+# Install Pi-hole
+
 Now we are finally going to install Pi-Hole!
 
 For this we are going to use the One-Step Automated Install
 `https://github.com/pi-hole/pi-hole/#one-step-automated-install`
 
 --------------------------------------
+
+# Dynamique Dns for our setup
 
 Now just before making more stuff, we are going to create a DynDns so we can have acces to our Pi-hole web interface and dns from outside.
 
@@ -73,6 +83,8 @@ In your ddclient config file, copy and past the premade one and change the value
 Now your done setting up your Dynamique Dns! Awesome!
 
 --------------------------------------
+
+# Nginx and Dns-over-Https setup
 
 After this we are going to change lighttpd to nginx.
 We are also going to follow the Optiona configuration part so we can have acces to our Dns and our interface from the outside.
@@ -90,6 +102,8 @@ And start and enable the dnss and nginx services. No futher config is needed!
 
 --------------------------------------
 
+# Dns-over-Tls setup
+
 Now for the Dns-over-Tls.
 First we are going to allow the port `853` to `ufw` with the following
 `sudo ufw allow 853/tcp`
@@ -101,7 +115,8 @@ And for our config just past the `stunnel.conf` of this repo and replace with yo
 
 --------------------------------------
 
-(Optional)
+# (Optional) Add a secure dns backend to our upstreams
+
 Now for our backend we are going to use Unbound to have a secure way to our upstream dns.
 First install it:
 `sudo apt-get install unbound`
@@ -119,6 +134,7 @@ And now you can start and enable Undound!
 
 --------------------------------------
 
-Todo:
+# Todos
+
 -"Automated" install.
 -Use unbound for Dns-over-Https for Having only exteranl dns acces without the interface.
