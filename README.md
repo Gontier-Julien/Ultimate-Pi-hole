@@ -1,4 +1,4 @@
-# Ultimate-Pi-hole
+# Ultimate-Pi-hole (Need to be updated)
 The Ultimate Pi-hole configuration with home DoH and DoT to acces anywhere!
 
 ### [This is not finised and still in the making]
